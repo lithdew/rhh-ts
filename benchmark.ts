@@ -1,7 +1,7 @@
 import BTree from "./b+tree";
-import { CAPACITY, put, del } from "./rh";
+import { CAPACITY, put, del } from "./rhh";
 
-const items = Array.from({ length: CAPACITY / 2 }, (_, i) => {
+const items = Array.from({ length: Math.floor(CAPACITY * 0.7) }, (_, i) => {
   return Bun.SHA256.hash(Uint8Array.of(i), "hex").slice(0, 16);
 });
 

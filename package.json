@@ -1,0 +1,11 @@
+{
+  "name": "comp5311",
+  "module": "benchmark.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

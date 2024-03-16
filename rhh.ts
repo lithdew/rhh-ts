@@ -33,17 +33,12 @@ export let len = 0;
 // If the key is shorter than 8 bytes, pad it with 0x00.
 // This hash function will make it so that 'AA' < 'AB'. 'A' < 'B'.
 export function hash(key: string) {
-  let h = key.charCodeAt(0) << 24;
-  if (key.length > 1) {
-    h += key.charCodeAt(1) << 16;
-  }
-  if (key.length > 2) {
-    h += key.charCodeAt(2) << 8;
-  }
-  if (key.length > 3) {
-    h += key.charCodeAt(3);
-  }
-  return h;
+  return (
+    ((key.charCodeAt(0) | 0) << 24) |
+    ((key.charCodeAt(1) | 0) << 16) |
+    ((key.charCodeAt(2) | 0) << 8) |
+    (key.charCodeAt(0) | 0)
+  );
 }
 
 export function hashToIndex(hash: number) {
